@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import ProductList from "@/components/ProductList";
 import axios from '@/lib/axios';
+import SearchForm from "@/components/SearchForm";
 
 export default async function Home() {
   const res = await axios.get('/products');
@@ -8,6 +9,7 @@ export default async function Home() {
 
   return (
     <>
+    <SearchForm />
     <ProductList className={styles.productList} products={products}/>
     </>
   );
